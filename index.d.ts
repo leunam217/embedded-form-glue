@@ -195,6 +195,15 @@ declare interface KR {
    */
   openPaymentMethod: (paymentMethod: string) => void
   /**
+   * Returns true if cards form is effectively expanded in context.
+   * This includes when cards is the sole payment method and we automatically expand it.
+   */
+  isCardsFormExpanded: () => Promise<boolean>
+  /**
+   * Returns the selected payment method in SPB mode, or null if none is selected or if not in SPB mode.
+   */
+  getSelectedPaymentMethod: () => Promise<string | null>
+  /**
    * Payment button.
    */
   button: KRButton
